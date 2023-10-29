@@ -13,10 +13,10 @@ public class CommunicationContainer {
             profileImpl.setParameter(ProfileImpl.MAIN_HOST, "localhost");
             AgentContainer agentContainer = runtime.createAgentContainer(profileImpl);
             AgentController agentController1 = agentContainer.createNewAgent
-                    ("AgentA", "Main.AgentA", new Object[]{});
+                    ("Ping", "Main.Ping", new Object[]{});
             agentController1.start();
             AgentController agentController2 = agentContainer.createNewAgent
-                    ("AgentB", "Main.AgentB", new Object[]{});
+                    ("Pong", "Main.Pong", new Object[]{});
             agentController2.start();
         } catch (Exception e) {
             e.printStackTrace();

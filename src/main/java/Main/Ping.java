@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Data
 public class Ping extends Agent {
-    int numeroBalle;
+    int numeroBalle=0;
     public void setup() {
         addBehaviour(new CyclicBehaviour() {
             @Override

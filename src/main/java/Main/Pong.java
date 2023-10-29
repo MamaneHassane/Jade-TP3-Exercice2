@@ -7,7 +7,7 @@ import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 
 public class Pong extends Agent {
-    int numeroBalle;
+    int numeroBalle=0;
     public void setup(){
         addBehaviour(new CyclicBehaviour() {
             @Override
@@ -20,7 +20,7 @@ public class Pong extends Agent {
                         System.out.println("Ping said to me : "+reponse.getContent());
                         if(numeroBalle<10) numeroBalle++;
                         ACLMessage pong = new ACLMessage(ACLMessage.INFORM);
-                        pong.addReceiver(new AID(reponse.getSender().getName(), AID.ISLOCALNAME));
+                        pong.addReceiver(new AID(reponse.getSender().getName()));
                         pong.setContent("Balle-"+numeroBalle);
                         send(pong);
                         if(numeroBalle==10) myAgent.doDelete();
